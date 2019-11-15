@@ -1,7 +1,9 @@
 import React from 'react';
 import Player from '../player'
 // import Enemy from '../enemy'
+import ProgressBar from '../player/healthbar/Progress-bar'
 import Map from '../map'
+
 
 const World = (props) => {
   return (  
@@ -12,7 +14,8 @@ const World = (props) => {
         height: '400px',
         margin: '20px auto'
       }}
-    >
+    > 
+      <ProgressBar />
       <Map />
       <Player />
       {/* <Enemy /> */}
