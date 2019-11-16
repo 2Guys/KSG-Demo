@@ -7,14 +7,7 @@ import Attack from '../player/attack/Attack'
 
 const World = (props) => {
   return (  
-    <div
-      styele={{
-        position: 'relative ',
-        width: '800px',
-        height: '400px',
-        margin: '20px auto'
-      }}
-    > 
+    <div>
       <ProgressBar />
       <Map />
       <Player />

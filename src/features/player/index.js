@@ -14,6 +14,7 @@ const Player = (props) => {
         left: props.position[0],
         backgroundImage: `url(${YebearSprite})`,
         backgroundPosition: '0 0',
+
         width: '100px', 
         height: '200px'
       }}
