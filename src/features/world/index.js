@@ -3,7 +3,7 @@ import Player from '../player'
 import Enemy from '../enemy'
 import ProgressBar from '../player/healthbar/Progress-bar'
 import Map from '../map'
-
+import Attack from '../player/attack/Attack'
 
 const World = (props) => {
   return (  
@@ -19,6 +19,7 @@ const World = (props) => {
       <Map />
       <Player />
       <Enemy />
+      <Attack />
     </div>
   );
 }

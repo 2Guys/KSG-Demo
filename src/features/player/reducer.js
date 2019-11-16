@@ -10,7 +10,7 @@ const DECREASE_RATE = "DECREASE_RATE"
 export const increasedHP = (HP) => {
   return {
     type: INCREASE_HP,
-     HP
+    HP
   }
 }
 

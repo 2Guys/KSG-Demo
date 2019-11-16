@@ -18,6 +18,7 @@ const Enemy = (props) => {
         height: '180px'
       }}
     />
+
   );
 }
 
