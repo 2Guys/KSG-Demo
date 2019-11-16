@@ -3,11 +3,11 @@ import {createLogger} from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import playerReducer from '../features/player/reducer'
-// import enemyReducer from '../features/enemy/reducer'
+import enemyReducer from '../features/enemy/reducer'
 
 const rootReducer = combineReducers({
   player: playerReducer,
-  // enemy: enemyReducer,
+  enemy: enemyReducer
 })
 
 const middleware = composeWithDevTools(

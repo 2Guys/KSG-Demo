@@ -17,6 +17,7 @@ export default function handleMovement2(player) {
       case "EAST":
         return [ oldPos[0] + SPRITE_SIZE, oldPos[1]]
       case "NORTH":
+        console.log(oldPos)
         return [ oldPos[0], oldPos[1]  - SPRITE_SIZE]
       case "SOUTH":
         return [ oldPos[0], oldPos[1]  + SPRITE_SIZE]

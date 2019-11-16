@@ -51,7 +51,7 @@ export const decreasedRate = (rate) => {
 
 
 const initialState = { 
-  position: [0, 0],
+  position: [760, 500],
   movement: false,
   HP: 100,
   SB: 0,

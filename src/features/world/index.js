@@ -1,6 +1,6 @@
 import React from 'react';
 import Player from '../player'
-// import Enemy from '../enemy'
+import Enemy from '../enemy'
 import ProgressBar from '../player/healthbar/Progress-bar'
 import Map from '../map'
 
@@ -18,7 +18,7 @@ const World = (props) => {
       <ProgressBar />
       <Map />
       <Player />
-      {/* <Enemy /> */}
+      <Enemy />
     </div>
   );
 }

@@ -29,10 +29,10 @@ class ProgressBar extends React.Component {
     this.updateSB = this.updateSB.bind(this)
   }
 
-  componentDidMount(){
-    setInterval(this.updateHP, 1000)
-    setInterval(this.updateSB, 1000)
-  }
+  // componentDidMount(){
+  //   setInterval(this.updateHP, 1000)
+  //   setInterval(this.updateSB, 1000)
+  // }
 
   updateHP() {
     let { HP, rate, decreasedHP, increasedHP, movement } = this.props
