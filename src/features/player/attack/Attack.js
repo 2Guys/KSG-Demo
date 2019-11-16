@@ -3,10 +3,11 @@ import { connect } from  'react-redux'
 import handleAttack from './fire';
 
 const Attack = (props) => {
+  
   return ( 
     <div 
       style={{
-        background:'#00ff00',
+        background:'red',
         height: '50px',
         width: '2px',
         position: 'absolute',

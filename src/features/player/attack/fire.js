@@ -1,5 +1,5 @@
-// import store from '../../../config/store'
-// import { SPRITE_SIZE } from '../../config/constants'
+import store from '../../../config/store'
+import { ATTACK_POSITION_X , ATTACK_POSITION_Y } from '../../../config/constants'
 
 export default function handleMovement2(attack) {
 
@@ -16,12 +16,24 @@ export default function handleMovement2(attack) {
   //   )
   // }
 
+  function updatePosition() {
+    const playerPos = store.getState().player.position
+    return [playerPos[0] + ATTACK_POSITION_X, playerPos[1] + ATTACK_POSITION_Y]
+  }
+
+  function dispatchAttack(){
+    store.dispatch({
+      type:'UPDATE_POSITION',
+      position: updatePosition()
+    })
+  }
+
   function handleKeyDown(e) {
     e.preventDefault()
 
     switch(e.keyCode) {
       case 32: 
-        return  console.log("PRESSED")
+        return  dispatchAttack()
       default: 
         console.log(e.keyCode)
     }
