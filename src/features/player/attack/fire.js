@@ -4,17 +4,15 @@ import { ATTACK_POSITION_X , ATTACK_POSITION_Y } from '../../../config/constants
 export default function handleMovement2(attack) {
 
 
-  // function handleKeyUp(e) {
-  //   e.preventDefault()
-
-  //   store.dispatch({
-  //     type: "CHECK_MOVE",
-  //     payload: {
-  //       movement: false
-  //     }
-  //     }
-  //   )
+    
+  // const triggerAttackSpeed =  setInterval(fireAttack, 400) 
+  
+  // const clearAttack = () => {
+  //   clearInterval(triggerAttackSpeed) 
   // }
+
+
+  
 
   function updatePosition() {
     const playerPos = store.getState().player.position
@@ -26,7 +24,8 @@ export default function handleMovement2(attack) {
       type:'UPDATE_POSITION',
       position: updatePosition()
     })
-  }
+    // fireAttack()
+  } 
 
   function handleKeyDown(e) {
     e.preventDefault()
@@ -44,9 +43,6 @@ export default function handleMovement2(attack) {
     handleKeyDown(e)
   })
 
-  // window.addEventListener('keyup', (e) => {
-  //   handleKeyUp(e)
-  // })
 
   return attack
 }

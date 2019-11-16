@@ -1,6 +1,5 @@
 import store from '../../config/store'
-// import { SPRITE_SIZE } from '../../config/constants'
-
+import playSound from '../../scripts/utility-functions'
 export default function handleMovement(enemy) {
 
 
@@ -17,12 +16,17 @@ export default function handleMovement(enemy) {
       return enemyAlgo.B
     }
     else if(oldPos[0] === enemyAlgo.B[0] && oldPos[1] === enemyAlgo.B[1]){
+      playSound('kingGhost2')
+      
       return enemyAlgo.C
     }
     else if(oldPos[0] === enemyAlgo.C[0] && oldPos[1] === enemyAlgo.C[1]){
+      playSound('kingGhost3')
       return enemyAlgo.D
+      
     }
     else{
+      playSound('kingGhost1')
       return enemyAlgo.A
     }
   }
