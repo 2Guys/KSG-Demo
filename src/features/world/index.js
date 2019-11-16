@@ -1,23 +1,18 @@
 import React from 'react';
 import Player from '../player'
-// import Enemy from '../enemy'
+import Enemy from '../enemy'
+import ProgressBar from '../player/healthbar/Progress-bar'
 import Map from '../map'
+import Attack from '../player/attack/Attack'
 
 const World = (props) => {
   return (  
-    // <div
-    //   style={{
-    //     position: 'relative ',
-    //     width: '800px',
-    //     height: '400px',
-    //     margin: '20px auto'
-    //   }}
-    // >
     <div>
-
+      <ProgressBar />
       <Map />
       <Player />
-      {/* <Enemy /> */}
+      <Enemy />
+      <Attack />
     </div>
   );
 }

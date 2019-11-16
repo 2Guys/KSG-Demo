@@ -66,7 +66,6 @@ function render() {
       <div/>
     );
   }
-
 }
 
 export default Map;
