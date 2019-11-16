@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react'
 import World from './features/world'
+
 
 function App() {
   return (
-    <div >
       <World />
-    </div>
   );
 }
 

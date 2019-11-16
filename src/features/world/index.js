@@ -5,14 +5,16 @@ import Map from '../map'
 
 const World = (props) => {
   return (  
-    <div
-      styele={{
-        position: 'relative ',
-        width: '800px',
-        height: '400px',
-        margin: '20px auto'
-      }}
-    >
+    // <div
+    //   style={{
+    //     position: 'relative ',
+    //     width: '800px',
+    //     height: '400px',
+    //     margin: '20px auto'
+    //   }}
+    // >
+    <div>
+
       <Map />
       <Player />
       {/* <Enemy /> */}
