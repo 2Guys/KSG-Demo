@@ -54,7 +54,7 @@ const initialState = {
   position: [0, 0],
   movement: false,
   HP: 100,
-  SB: 90,
+  SB: 0,
   rate: 1
 }
 
