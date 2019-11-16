@@ -7,7 +7,7 @@ class Map extends React.Component {
 
 
     var camera, scene, renderer, geometry, 
-material, mesh, texture, light, controls;
+material, mesh, texture, light;
 
 init();
 animate();
@@ -22,8 +22,6 @@ function init() {
     camera.lookAt(scene.position);
     scene.add(camera);
 
-     
-    
     light = new THREE.DirectionalLight(0xE0E0FF, 1.5);
     light.position.set(10, 100, 100);
     scene.add(light);

@@ -1,7 +1,7 @@
 import React from 'react';
 import Player from '../player'
 import Enemy from '../enemy'
-import ProgressBar from '../player/healthbar/Progress-bar'
+import ProgressBar from '../player/healthbar/progress-bar'
 import Map from '../map'
 import Attack from '../player/attack/Attack'
 
