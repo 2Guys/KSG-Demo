@@ -1,14 +1,27 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  background-color: #B0AAD1;
 }
 
+#progress-header{
+  display: flex;
+  justify-content: space-around;
+}
 #players-health{ 
   position: relative;
   height: 20px; 
   width: 350px;
   border-radius: 50px;
   border: 1px solid #333;
+}
+
+#enemy-health{ 
+  position: relative;
+  height: 20px; 
+  width: 350px;
+  border-radius: 50px;
+  border: 1px solid rebeccapurple;
 }
 
 #players-stress{ 
@@ -21,7 +34,7 @@ body {
 
 .status-box{
   box-sizing: content-box;  
-  width: 400px;
+  width: 375px;
   height: 75px;
   padding: 7px; 
   border: 5px solid black;

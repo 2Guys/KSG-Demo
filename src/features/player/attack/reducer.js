@@ -3,7 +3,7 @@ const UPDATE_POSITION = "UPDATE_POSITION"
 const RELEASE_ATTACK = 'RELEASE_ATTACK'
 
 const initialState = { 
-  position: [0, 0],
+  position: [823, 550],
 }
 
 const attackReducer = (state=initialState, action) => {
