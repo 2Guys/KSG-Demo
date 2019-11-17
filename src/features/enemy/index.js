@@ -8,6 +8,7 @@ setInterval(handleMovement,3000)
 const Enemy = (props) => {
   return ( 
     <div 
+      className='floating'
       style={{
         position: 'absolute',
         top:props.position[1],
