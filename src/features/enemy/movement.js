@@ -1,5 +1,6 @@
 import store from '../../config/store'
 import playSound from '../../scripts/utility-functions'
+
 export default function handleMovement(enemy) {
 
 
@@ -35,13 +36,8 @@ export default function handleMovement(enemy) {
     const oldPos = store.getState().enemy.position
     store.dispatch({
       type: "MOVE_ENEMY",
-      payload: {
-        position: nextMove(oldPos)
-      }
-      }
-    )
+      position: nextMove(oldPos)
+    })
   
-
-
   return enemy
 }

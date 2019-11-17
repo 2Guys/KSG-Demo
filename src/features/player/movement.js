@@ -1,7 +1,7 @@
 import store from '../../config/store'
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from '../../config/constants'
 
-export default function handleMovement2(player) {
+export default function handleMovement(player) {
 
   function observeBoundaries(oldPos, newPos) {
     return (newPos[0] >= 0 && newPos[0] <= MAP_WIDTH - SPRITE_SIZE) &&

@@ -1,5 +1,5 @@
 import React from 'react'
-import Filler from './Filler'
+import EnemyFiller from './Enemy-Filler'
 
 const HealthBar = (props) => {
   const { HP } = props
@@ -7,7 +7,7 @@ const HealthBar = (props) => {
     <div>
       <h4>HP:</h4>
       <div id="enemy-health">
-        <Filler HP={HP} />
+        <EnemyFiller HP={HP} />
       </div>
     </div>
   );

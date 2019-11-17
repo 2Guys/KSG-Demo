@@ -46,6 +46,13 @@ body {
   border-radius: inherit;
   transition: width .2s ease-in; 
 }
+.enemy-filler {
+  background: #1AD598;
+  height: 100%;
+  border-radius: inherit;
+  transition: width .2s ease-in; 
+}
+
 
 .SB-filler{
   background: rgb(213, 38, 26);
@@ -58,3 +65,45 @@ body {
 h4{
   margin: 0
 }
+
+.ultralightBeam{
+  height: 4px;
+  width: 4px;
+  box-shadow:
+  0 0 60px 30px #fff,  /* inner white */
+  0 0 100px 60px #f0f, /* middle magenta */
+  0 0 140px 90px #0ff; /* outer cyan */
+}
+
+.ultralightBeamWave{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  width: 500px;
+  height: 50px;
+  box-shadow:
+  0 0 60px 30px #fff,  /* inner white */
+  0 0 100px 60px #f0f, /* middle magenta */
+  0 0 140px 90px #0ff; /* outer cyan */
+} 
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+

@@ -28,10 +28,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-// const mapDispatchToProps = (dispacth) => {
-//   return {
-   
-//   }
-// }
-
 export default connect(mapStateToProps, null)(handleMovement(Enemy))

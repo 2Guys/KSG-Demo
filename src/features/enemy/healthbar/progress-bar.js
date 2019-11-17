@@ -6,6 +6,7 @@ class EnemyProgressBar extends Component {
 
   render() { 
     const { HP } = this.props
+
     return (  
       <div className='status-box'>
         <HealthBar HP={HP}/>

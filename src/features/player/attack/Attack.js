@@ -1,18 +1,35 @@
 import React from 'react';
 import { connect } from  'react-redux'
-import handleAttack from './fire';
+import handleAttack from './handleAttack';
+
+
 
 const Attack = (props) => {
+  const { classUpdate, player } = props
+    let positionY 
+    let positionX
+  
+  
+    if(classUpdate === "ultralightBeam"){
+        positionY = player[1] + 100
+        positionX = player[0] + 60
+    }
+    else {
+        positionY = player[1] + 75
+        positionX = player[0] + 60
+    }
+  
   
   return ( 
     <div 
+      className={classUpdate}
       style={{
-        background:'red',
-        height: '50px',
-        width: '2px',
+        background:'#fff',
         position: 'absolute',
-        top:props.position[1],
-        left: props.position[0],
+        top:positionY,
+        left: positionX,
+        'border-radius': '50%',
+        opacity:'.8' 
       }}
     />
   );
@@ -21,7 +38,9 @@ const Attack = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    position: state.attack.position
+    position: state.attack.position,
+    classUpdate: state.attack.classUpdate,
+    player: state.player.position
   }
 }
 

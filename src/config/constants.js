@@ -6,5 +6,7 @@ export const MAP_WIDTH  = SPRITE_SIZE * 20
 export const ENEMY_MAP_HEIGHT = SPRITE_SIZE * 10
 export const ENEMY_MAP_WIDTH  = SPRITE_SIZE * 20
 
-export const ATTACK_POSITION_X = 63
-export const ATTACK_POSITION_Y = 50
+export const ATTACK_POSITION_X = 60
+export const ATTACK_POSITION_Y = 100
+
+export const BEAM_REACH = 490
