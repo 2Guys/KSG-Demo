@@ -145,7 +145,7 @@ h4{
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
-  width: 500px;
+  width: 725px;
   height: 50px;
   box-shadow:
   0 0 60px 30px #fff,  /* inner white */

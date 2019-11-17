@@ -63,20 +63,20 @@ class ProgressBar extends React.Component {
     }
 
     if(SB === 100){
-      rate = 3
+      rate = 15
       increasedRate(rate)
     }
-    else if(rate === 3 && SB !== 100){
-      rate  = 1
+    else if(rate === 15 && SB !== 100){
+      rate  = 5
       decreasedRate(rate)
     }
 
     if(SB < 100 && !movement){
-      SB += 2
+      SB += 15
       increasedSB(SB)
     }
     else if(SB > 0 && movement){
-      SB -= 4
+      SB -= 15
       decreasedSB(SB)
     }
   }

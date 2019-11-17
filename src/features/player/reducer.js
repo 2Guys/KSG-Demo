@@ -51,11 +51,11 @@ export const decreasedRate = (rate) => {
 
 
 const initialState = { 
-  position: [760, 500],
+  position: [120, 500],
   movement: false,
   HP: 100,
   SB: 0,
-  rate: 1
+  rate: 5
 }
 
 const playerReducer = (state=initialState, action) => {

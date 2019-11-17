@@ -1,13 +1,13 @@
 import store from '../../../config/store'
 import { decreasedHP, increasedSB } from '../../player/reducer'
-import { DAMAGE, BEAM_REACH} from '../../../config/constants'
+import { ENEMY_DAMAGE, BEAM_REACH} from '../../../config/constants'
 
 export default function handleAttack() {
 
   function decreaseHP() {
     let playerHP =  store.getState().player.HP
   
-    playerHP -= DAMAGE
+    playerHP -= ENEMY_DAMAGE
 
     if(playerHP < 0 ){
       playerHP = 0

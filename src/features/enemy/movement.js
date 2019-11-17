@@ -10,11 +10,11 @@ export default function handleMovement(enemy) {
     const attackClass = store.getState().enemyAttack.enemyClassUpdate
 
     if(attackClass === 'ghostBeam'){
+      handleAttack()
       return 'ghostBeamWave'
     } 
 
     if(attackClass === 'ghostBeamWave'){
-      handleAttack()
       return 'ghostBeam'
     }
   }

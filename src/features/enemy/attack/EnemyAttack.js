@@ -15,7 +15,7 @@ const EnemyAttack = (props) => {
   }
   else{
     positionY = enemy[1] + 140
-    positionX = enemy[0] - 400
+    positionX = enemy[0] - 625
   }
 
   
