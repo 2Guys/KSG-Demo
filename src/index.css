@@ -3,3 +3,45 @@ body {
   font-family: sans-serif;
 }
 
+#players-health{ 
+  position: relative;
+  height: 20px; 
+  width: 350px;
+  border-radius: 50px;
+  border: 1px solid #333;
+}
+
+#players-stress{ 
+  position: relative;
+  height: 20px; 
+  width: 150px;
+  border-radius: 50px;
+  border: 1px solid #333;
+}
+
+.status-box{
+  box-sizing: content-box;  
+  width: 400px;
+  height: 75px;
+  padding: 7px; 
+  border: 5px solid black;
+}
+
+.filler {
+  background: #1AD598;
+  height: 100%;
+  border-radius: inherit;
+  transition: width .2s ease-in; 
+}
+
+.SB-filler{
+  background: rgb(213, 38, 26);
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  transition: width .2s ease-in; 
+}
+
+h4{
+  margin: 0
+}

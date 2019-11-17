@@ -6,7 +6,6 @@ export default function handleMovement2(player) {
   function observeBoundaries(oldPos, newPos) {
     return (newPos[0] >= 0 && newPos[0] <= MAP_WIDTH - SPRITE_SIZE) &&
           (newPos[1] >= 0 && newPos[1] <= MAP_HEIGHT - SPRITE_SIZE) ? newPos : oldPos 
-    // return newPos
   }
   
   function getNewPosition(direction) {
@@ -18,6 +17,7 @@ export default function handleMovement2(player) {
       case "EAST":
         return [ oldPos[0] + SPRITE_SIZE, oldPos[1]]
       case "NORTH":
+        console.log(oldPos)
         return [ oldPos[0], oldPos[1]  - SPRITE_SIZE]
       case "SOUTH":
         return [ oldPos[0], oldPos[1]  + SPRITE_SIZE]
@@ -42,6 +42,7 @@ export default function handleMovement2(player) {
     e.preventDefault()
     
     switch(e.keyCode) {
+    
       case 37: 
         return dispatchMove("WEST")
       case 38: 
@@ -54,10 +55,33 @@ export default function handleMovement2(player) {
         console.log(e.keyCode)
     }
   }
+
+  function handleKeyUp(e) {
+    e.preventDefault()
+
+    store.dispatch({
+      type: "CHECK_MOVE",
+      payload: {
+        movement: false
+      }
+      }
+    )
+  }
   
   
   window.addEventListener('keydown', (e) => {
     handleKeyDown(e)
+    store.dispatch({
+      type: "CHECK_MOVE",
+      payload: {
+        movement: true
+      }
+      }
+    )
+  })
+
+  window.addEventListener('keyup', (e) => {
+    handleKeyUp(e)
   })
 
   return player

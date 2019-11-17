@@ -7,8 +7,9 @@ class Map extends React.Component {
   componentDidMount() {
 
 
-    var camera, scene, renderer, geometry, 
-material, mesh, texture, light, controls, booGeometry, booMaterial, booTexture, booMesh;
+    var camera, scene, renderer, geometry, material, mesh, texture, light, controls, booGeometry, booMaterial, booTexture, booMesh;
+
+
 
 init();
 animate();
@@ -23,8 +24,6 @@ function init() {
     camera.lookAt(scene.position);
     scene.add(camera);
 
-     
-    
     light = new THREE.DirectionalLight(0xE0E0FF, 1.5);
     light.position.set(10, 100, 100);
     scene.add(light);
@@ -95,7 +94,6 @@ function render() {
       <div/>
     );
   }
-
 }
 
 export default Map;
