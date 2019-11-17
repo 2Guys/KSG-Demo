@@ -4,10 +4,11 @@ import BooSprite from './boo.png'
 const Boo = () => (
     <div
       style={{
+          position: 'absolute',
           backgroundImage: `url(${BooSprite})`,
           backgroundPosition: '0 0',
-          width: '21',
-          height: '23px'
+          width: '25px',
+          height: '25px'
       }}
     />
 )

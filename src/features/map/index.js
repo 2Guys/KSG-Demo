@@ -1,6 +1,6 @@
 import React from 'react';
 import * as THREE from 'three'
-
+import Boo from './boo'
 
 class Map extends React.Component {
 
@@ -41,7 +41,7 @@ function init() {
     texture.repeat.set(45, 45);
 
 
-    booTexture = new THREE.TextureLoader().load()
+    // booTexture = new THREE.TextureLoader().load(Boo)
 
     var boos = []
 
