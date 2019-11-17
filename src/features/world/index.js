@@ -5,6 +5,7 @@ import ProgressBar from '../player/healthbar/progress-bar'
 import EnemyProgressBar from '../enemy/healthbar/progress-bar'
 import Map from '../map'
 import Attack from '../player/attack/Attack'
+import EnemyAttack from '../enemy/attack/EnemyAttack';
 
 const World = (props) => {
   return (  
@@ -17,6 +18,7 @@ const World = (props) => {
       <Player />
       <Enemy />
       <Attack />
+      <EnemyAttack />
     </div>
   );
 }

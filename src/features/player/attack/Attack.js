@@ -38,7 +38,6 @@ const Attack = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    position: state.attack.position,
     classUpdate: state.attack.classUpdate,
     player: state.player.position
   }

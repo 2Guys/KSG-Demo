@@ -7,10 +7,14 @@ function Home (props) {
         return null
     }
         return (
-            <div>
-                <h1>GAME DEMO</h1>
-                
-                <Link to='/world'>Start</Link>
+            <div className='container'>
+                <h1>KIDS SEE GHOST</h1>
+                <h5>Demo</h5>
+                <p>this is a demo of the Kids See Ghost the game. 
+                It is based on the album Kids See Ghost by Kid Cuid and Kanye West. </p>
+                <Link to='/world'>
+                    <button> Start</button>
+                </Link>
                 
             </div>
         )

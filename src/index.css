@@ -1,7 +1,17 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Press Start 2P', cursive;
   background-color: #B0AAD1;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  text-align: center
+}
+
+h5{
+  margin: 0
 }
 
 .floating {  
@@ -120,5 +130,29 @@ h4{
     transform: translate3d(4px, 0, 0);
   }
 }
+
+.ghostBeam{
+  height: 60px;
+  width: 60px;
+  box-shadow:
+  0 0 60px 30px #fff,  /* inner white */
+  0 0 100px 60px #ECEAB0
+  0 0 140px 90px  #ACD198 /* outer cyan */
+}
+
+.ghostBeamWave{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  width: 500px;
+  height: 50px;
+  box-shadow:
+  0 0 60px 30px #fff,  /* inner white */
+  0 0 100px 60px #ECEAB0
+  0 0 140px 90px  #ACD198 /* outer cyan */
+} 
+
+
 
 
