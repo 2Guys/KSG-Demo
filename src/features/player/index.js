@@ -7,14 +7,13 @@ import handleMovement from './movement';
 
 const Player = (props) => {
   return ( 
-    <div 
+    <div className='player'
       style={{
         position: 'absolute',
         top:props.position[1],
         left: props.position[0],
         backgroundImage: `url(${YebearSprite})`,
         backgroundPosition: '0 0',
-
         width: '100px', 
         height: '200px'
       }}

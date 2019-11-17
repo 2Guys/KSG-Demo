@@ -1,5 +1,6 @@
 import store from '../../config/store'
 import playSound from '../../scripts/utility-functions'
+
 export default function handleMovement(enemy) {
 
 
@@ -21,12 +22,12 @@ export default function handleMovement(enemy) {
       return enemyAlgo.C
     }
     else if(oldPos[0] === enemyAlgo.C[0] && oldPos[1] === enemyAlgo.C[1]){
-      playSound('kingGhost3')
+      // playSound('kingGhost3')
       return enemyAlgo.D
       
     }
     else{
-      playSound('kingGhost1')
+      // playSound('kingGhost1')
       return enemyAlgo.A
     }
   }
@@ -35,13 +36,8 @@ export default function handleMovement(enemy) {
     const oldPos = store.getState().enemy.position
     store.dispatch({
       type: "MOVE_ENEMY",
-      payload: {
-        position: nextMove(oldPos)
-      }
-      }
-    )
+      position: nextMove(oldPos)
+    })
   
-
-
   return enemy
 }

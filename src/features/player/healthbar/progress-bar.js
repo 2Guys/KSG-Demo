@@ -16,15 +16,6 @@ import { connect } from  'react-redux'
 class ProgressBar extends React.Component {
   constructor(props) {
     super(props)
-    /*
-    HP = Health Bar
-    SB = Stress Bar
-    */
-    this.state = { 
-      HP: 100,
-      SB: 0,
-      rate: 1
-    } 
     this.updateHP = this.updateHP.bind(this)
     this.updateSB = this.updateSB.bind(this)
   }
@@ -94,8 +85,7 @@ class ProgressBar extends React.Component {
 
   render() { 
     const {HP, SB } = this.props
-
-
+    
     return ( 
       <div className="status-box">
         <HealthBar HP={HP} />
@@ -125,6 +115,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProgressBar);
+export default connect(mapStateToProps, mapDispatchToProps)(ProgressBar)
 
-// While Yebear is is moving helath increases to 100% when movement Yebear loses HP by .5

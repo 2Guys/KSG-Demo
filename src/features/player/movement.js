@@ -1,7 +1,7 @@
 import store from '../../config/store'
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from '../../config/constants'
 
-export default function handleMovement2(player) {
+export default function handleMovement(player) {
 
   function observeBoundaries(oldPos, newPos) {
     return (newPos[0] >= 0 && newPos[0] <= MAP_WIDTH - SPRITE_SIZE) &&
@@ -16,11 +16,6 @@ export default function handleMovement2(player) {
         return [ oldPos[0] - SPRITE_SIZE, oldPos[1]]
       case "EAST":
         return [ oldPos[0] + SPRITE_SIZE, oldPos[1]]
-      case "NORTH":
-        console.log(oldPos)
-        return [ oldPos[0], oldPos[1]  - SPRITE_SIZE]
-      case "SOUTH":
-        return [ oldPos[0], oldPos[1]  + SPRITE_SIZE]
       default:
         console.log (direction)
     }
@@ -42,15 +37,10 @@ export default function handleMovement2(player) {
     e.preventDefault()
     
     switch(e.keyCode) {
-    
       case 37: 
         return dispatchMove("WEST")
-      case 38: 
-        return dispatchMove("NORTH")
       case 39: 
         return dispatchMove("EAST")
-      case 40: 
-        return dispatchMove("SOUTH")
       default: 
         console.log(e.keyCode)
     }

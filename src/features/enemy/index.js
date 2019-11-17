@@ -3,11 +3,12 @@ import ghostSprite from '../enemy/kingGhost.png'
 import { connect } from  'react-redux'
 import handleMovement from './movement';
 
-setInterval(handleMovement,3000) 
+setInterval(handleMovement,3000)   
 
 const Enemy = (props) => {
   return ( 
     <div 
+      className='floating'
       style={{
         position: 'absolute',
         top:props.position[1],
@@ -27,11 +28,5 @@ const mapStateToProps = (state) => {
     position: state.enemy.position
   }
 }
-
-// const mapDispatchToProps = (dispacth) => {
-//   return {
-   
-//   }
-// }
 
 export default connect(mapStateToProps, null)(handleMovement(Enemy))
