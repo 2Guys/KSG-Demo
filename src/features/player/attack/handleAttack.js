@@ -1,6 +1,6 @@
 import store from '../../../config/store'
 import { decreasedHP } from '../../enemy/reducer'
-import { BEAM_REACH } from '../../../config/constants' 
+import { BEAM_REACH , DAMAGE} from '../../../config/constants' 
 
 export default function handleAttack(attack) {
 
@@ -21,7 +21,7 @@ export default function handleAttack(attack) {
   function decreaseHP() {
     let enemyHP =  store.getState().enemy.HP
   
-    enemyHP -= 10
+    enemyHP -= DAMAGE
 
     if(enemyHP < 0 ){
       enemyHP = 0
@@ -35,13 +35,16 @@ export default function handleAttack(attack) {
     const playerPosition = store.getState().player.position
     const enemyPosY = enemyPosition[1]
     const enemyPosX = enemyPosition[0]
-
-    const playerPosY = playerPosition[1]
+  
     const playerPosX = playerPosition[0]
 
-    if(playerPosX + BEAM_REACH > enemyPosX && playerPosY > enemyPosY){
-      return decreaseHP()
+    if(enemyPosY > 360 ){
+      if(playerPosX + BEAM_REACH > enemyPosX) {
+        return decreaseHP()
+      }
     }
+
+
   }  
 
   function dispatchAttack(){

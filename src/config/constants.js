@@ -10,3 +10,4 @@ export const ATTACK_POSITION_X = 60
 export const ATTACK_POSITION_Y = 100
 
 export const BEAM_REACH = 490
+export const DAMAGE = 2
