@@ -1,10 +1,15 @@
 import React from 'react'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import World from './features/world'
-
+import Home from './features/home/home'
 
 function App() {
   return (
-      <World />
+    <Router>
+      {/* <Route path='/' component /> */}
+      <Route path='/' component={Home} />
+      <Route exact path='/world' component={World}/>
+    </Router>
   );
 }
 
