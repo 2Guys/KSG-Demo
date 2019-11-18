@@ -12,7 +12,7 @@ function Home (props) {
                 <h5>Demo</h5>
                 <h4>By: Sayeed Joseph & Vincent Tse</h4>
                 <p>this is a demo of the Kids See Ghost the game. 
-                It is based on the album Kids See Ghost by Kid Cuid and Kanye West. </p>
+                It is based on the album Kids See Ghost by Kid Cuid and Kanye West.</p>
                 <Link to='/world'>
                     <button> Start</button>
                 </Link>
