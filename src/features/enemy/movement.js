@@ -1,6 +1,6 @@
 import store from '../../config/store'
 import handleAttack from '../enemy/attack/handleAttack'
-import playSound from '../../scripts/utility-functions'
+// import playSound from '../../scripts/utility-functions'
 
 export default function handleMovement(enemy) {
 
@@ -32,7 +32,7 @@ export default function handleMovement(enemy) {
       return enemyAlgo.B
     }
     else if(oldPos[0] === enemyAlgo.B[0] && oldPos[1] === enemyAlgo.B[1]){
-      playSound('kingGhost1')
+      // playSound('kingGhost1')
       dispatchAttack()
 
       return enemyAlgo.C
@@ -42,7 +42,7 @@ export default function handleMovement(enemy) {
       return enemyAlgo.D
     }
     else{
-      playSound('kingGhost2')
+      // playSound('kingGhost2')
       dispatchAttack()
       return enemyAlgo.A
     }

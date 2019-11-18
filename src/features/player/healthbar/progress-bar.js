@@ -11,6 +11,8 @@ import {
 } from '../reducer'
 import { connect } from  'react-redux'
 import { updateDisplay } from '../../game over/reducer';
+import playSound from '../../../scripts/utility-functions'
+import pauseSound from '../../../scripts/utility-pause';
 
 
 class ProgressBar extends React.Component {
@@ -23,6 +25,7 @@ class ProgressBar extends React.Component {
   componentDidMount(){
     this.updateHPId = setInterval(this.updateHP, 1000)
     this.updateSBId = setInterval(this.updateSB, 1000)
+    playSound('background')
   }
 
   componentWillUnmount() {
@@ -95,6 +98,7 @@ class ProgressBar extends React.Component {
       clearInterval(this.updateHPId)
       clearInterval(this.updateSBId)
       gameOver('block')
+      pauseSound('background')
     }
 
     return ( 
