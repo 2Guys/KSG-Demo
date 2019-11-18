@@ -10,7 +10,7 @@ function Home (props) {
             <div className='container'>
                 <h1>KIDS SEE GHOST</h1>
                 <h5>Demo</h5>
-                <h4>By: Sayeed Joseph & Vinvent Tse</h4>
+                <h4>By: Sayeed Joseph & Vincent Tse</h4>
                 <p>this is a demo of the Kids See Ghost the game. 
                 It is based on the album Kids See Ghost by Kid Cuid and Kanye West. </p>
                 <Link to='/world'>
