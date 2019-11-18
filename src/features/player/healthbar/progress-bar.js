@@ -1,4 +1,3 @@
-
 import React from 'react';
 import HealthBar from './healthbar'
 import StressBar from './stressBar'
@@ -11,6 +10,7 @@ import {
   decreasedRate,
 } from '../reducer'
 import { connect } from  'react-redux'
+import { updateDisplay } from '../../game over/reducer';
 
 
 class ProgressBar extends React.Component {
@@ -21,8 +21,13 @@ class ProgressBar extends React.Component {
   }
 
   componentDidMount(){
-    setInterval(this.updateHP, 1000)
-    setInterval(this.updateSB, 1000)
+    this.updateHPId = setInterval(this.updateHP, 1000)
+    this.updateSBId = setInterval(this.updateSB, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateHPId)
+    clearInterval(this.updateSBId)
   }
 
   updateHP() {
@@ -32,13 +37,13 @@ class ProgressBar extends React.Component {
       HP = 99
     }
 
-    if(HP < 0){
-      HP = 0
-    }
 
-    if(HP <= 100 && HP >= 2 && !movement){
+    if(HP <= 100 && !movement){
       HP -= rate
-      
+
+      if(HP < 0){
+        HP = 0
+      }
       decreasedHP(HP)
     }
     else if(HP < 100 && movement){
@@ -63,20 +68,20 @@ class ProgressBar extends React.Component {
     }
 
     if(SB === 100){
-      rate = 3
+      rate = 10
       increasedRate(rate)
     }
-    else if(rate === 3 && SB !== 100){
-      rate  = 1
+    else if(rate === 10 && SB !== 100){
+      rate  = 5
       decreasedRate(rate)
     }
 
     if(SB < 100 && !movement){
-      SB += 2
+      SB += 10
       increasedSB(SB)
     }
     else if(SB > 0 && movement){
-      SB -= 4
+      SB -= 10
       decreasedSB(SB)
     }
   }
@@ -84,8 +89,14 @@ class ProgressBar extends React.Component {
 
 
   render() { 
-    const {HP, SB } = this.props
-    
+    const {HP, SB, gameOver, enemyHP } = this.props
+
+    if(!HP || !enemyHP){
+      clearInterval(this.updateHPId)
+      clearInterval(this.updateSBId)
+      gameOver('block')
+    }
+
     return ( 
       <div className="status-box">
         <HealthBar HP={HP} />
@@ -100,7 +111,8 @@ const mapStateToProps = state => {
     movement: state.player.movement,
     HP: state.player.HP,
     SB: state.player.SB,
-    rate: state.player.rate
+    rate: state.player.rate,
+    enemyHP: state.enemy.HP
   }
 }
 
@@ -112,6 +124,7 @@ const mapDispatchToProps = dispatch => {
     increasedSB: (SB)=> { dispatch(increasedSB(SB))},
     decreasedRate: (rate)=> { dispatch(decreasedRate(rate))},
     increasedRate: (rate)=> { dispatch(increasedRate(rate))},
+    gameOver: (display) => {dispatch(updateDisplay(display))}
   }
 }
 

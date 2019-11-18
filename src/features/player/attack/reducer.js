@@ -1,5 +1,3 @@
-
-
 const UPDATE_CLASS = "UPDATE_CLASS"
 
 const initialState = {   

@@ -26,7 +26,6 @@ export default function handleAttack(attack) {
     if(enemyHP < 0 ){
       enemyHP = 0
     }
-    console.log("TCL: decreaseHP -> enemyHP ", enemyHP )
     store.dispatch(decreasedHP(enemyHP))
   }
 
