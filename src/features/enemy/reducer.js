@@ -2,7 +2,7 @@ const MOVE_ENEMY = "MOVE_ENEMY"
 const DECREASE_ENEMY_HP = "DECREASE_ENEMY_HP"
 
 const initialState = { 
-  HP: 5,
+  HP: 100,
   position: [900,460],
 }
 

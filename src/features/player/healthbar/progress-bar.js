@@ -37,13 +37,13 @@ class ProgressBar extends React.Component {
       HP = 99
     }
 
-    if(HP < 0){
-      HP = 0
-    }
 
-    if(HP <= 100 && HP >= 2 && !movement){
+    if(HP <= 100 && !movement){
       HP -= rate
-      
+
+      if(HP < 0){
+        HP = 0
+      }
       decreasedHP(HP)
     }
     else if(HP < 100 && movement){
@@ -68,20 +68,20 @@ class ProgressBar extends React.Component {
     }
 
     if(SB === 100){
-      rate = 15
+      rate = 10
       increasedRate(rate)
     }
-    else if(rate === 15 && SB !== 100){
+    else if(rate === 10 && SB !== 100){
       rate  = 5
       decreasedRate(rate)
     }
 
     if(SB < 100 && !movement){
-      SB += 15
+      SB += 10
       increasedSB(SB)
     }
     else if(SB > 0 && movement){
-      SB -= 15
+      SB -= 10
       decreasedSB(SB)
     }
   }

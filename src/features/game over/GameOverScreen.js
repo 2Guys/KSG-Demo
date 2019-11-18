@@ -1,12 +1,16 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import playSound from '../../scripts/utility-functions'
 
 
 
 class GameOver extends Component {
   render() { 
     const { playerHP, display } = this.props
-    console.log("TCL: GameOver -> render -> playerHP,", playerHP,)
+
+    if(!playerHP){
+      playSound('lose')
+    }
     const winner = playerHP <= 0 ? <div>You Lose </div> : <div>You Win</div>
     return ( 
     <div id='gameOver'

@@ -8,7 +8,7 @@ const change = setInterval(handleMovement,3000)
 
 
 const Enemy = (props) => {
-  if(props.HP === 0){
+  if(props.HP === 0 || !props.playerHP){
     clearInterval(change)
   }
   return ( 
@@ -31,7 +31,8 @@ const Enemy = (props) => {
 const mapStateToProps = (state) => {
   return {
     position: state.enemy.position,
-    HP: state.enemy.HP
+    HP: state.enemy.HP,
+    playerHP: state.player.HP
   }
 }
 
