@@ -1,4 +1,3 @@
-
 import React from 'react';
 import HealthBar from './healthbar'
 import StressBar from './stressBar'
@@ -22,8 +21,13 @@ class ProgressBar extends React.Component {
   }
 
   componentDidMount(){
-    setInterval(this.updateHP, 1000)
-    setInterval(this.updateSB, 1000)
+    this.updateHPId = setInterval(this.updateHP, 1000)
+    this.updateSBId = setInterval(this.updateSB, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateHPId)
+    clearInterval(this.updateSBId)
   }
 
   updateHP() {
@@ -88,6 +92,8 @@ class ProgressBar extends React.Component {
     const {HP, SB, gameOver } = this.props
 
     if(!HP){
+      clearInterval(this.updateHPId)
+      clearInterval(this.updateSBId)
       gameOver('block')
     }
 

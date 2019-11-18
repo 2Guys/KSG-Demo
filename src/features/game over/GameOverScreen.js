@@ -17,6 +17,7 @@ class GameOver extends Component {
       <div id='text'>
         GAME OVER
         {winner}
+        <button onClick={()=> {window.location.reload(true)}}>Replay</button>
       </div>
     </div>
     );
