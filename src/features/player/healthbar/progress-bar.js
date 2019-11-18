@@ -89,9 +89,9 @@ class ProgressBar extends React.Component {
 
 
   render() { 
-    const {HP, SB, gameOver } = this.props
+    const {HP, SB, gameOver, enemyHP } = this.props
 
-    if(!HP){
+    if(!HP || !enemyHP){
       clearInterval(this.updateHPId)
       clearInterval(this.updateSBId)
       gameOver('block')
@@ -111,7 +111,8 @@ const mapStateToProps = state => {
     movement: state.player.movement,
     HP: state.player.HP,
     SB: state.player.SB,
-    rate: state.player.rate
+    rate: state.player.rate,
+    enemyHP: state.enemy.HP
   }
 }
 
