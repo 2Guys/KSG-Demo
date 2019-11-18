@@ -11,6 +11,7 @@ import {
   decreasedRate,
 } from '../reducer'
 import { connect } from  'react-redux'
+import { updateDisplay } from '../../game over/reducer';
 
 
 class ProgressBar extends React.Component {
@@ -84,8 +85,12 @@ class ProgressBar extends React.Component {
 
 
   render() { 
-    const {HP, SB } = this.props
-    
+    const {HP, SB, gameOver } = this.props
+
+    if(!HP){
+      gameOver('block')
+    }
+
     return ( 
       <div className="status-box">
         <HealthBar HP={HP} />
@@ -112,6 +117,7 @@ const mapDispatchToProps = dispatch => {
     increasedSB: (SB)=> { dispatch(increasedSB(SB))},
     decreasedRate: (rate)=> { dispatch(decreasedRate(rate))},
     increasedRate: (rate)=> { dispatch(increasedRate(rate))},
+    gameOver: (display) => {dispatch(updateDisplay(display))}
   }
 }
 

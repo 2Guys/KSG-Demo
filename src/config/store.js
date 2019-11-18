@@ -6,12 +6,14 @@ import playerReducer from '../features/player/reducer'
 import enemyReducer from '../features/enemy/reducer'
 import attackReducer from '../features/player/attack/reducer'
 import enemyAttackReducer from '../features/enemy/attack/reducer';
+import gameOverReducer from '../features/game over/reducer'
 
 const rootReducer = combineReducers({
   player: playerReducer,
   enemy: enemyReducer,
   attack: attackReducer, 
-  enemyAttack: enemyAttackReducer
+  enemyAttack: enemyAttackReducer,
+  gameOver: gameOverReducer 
 })
 
 const middleware = composeWithDevTools(

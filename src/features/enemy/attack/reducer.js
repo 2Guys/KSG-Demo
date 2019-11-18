@@ -3,7 +3,7 @@
 const UPDATE_ENEMY_CLASS = "UPDATE_ENEMY_CLASS"
 
 const initialState = {   
-  enemyClassUpdate: 'ghostBeam'
+  enemyClassUpdate: 'ghostBeamWave'
 }
 
 const enemyAttackReducer = (state=initialState, action) => {

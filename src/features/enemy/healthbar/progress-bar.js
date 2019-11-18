@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import HealthBar from './healthBar'
 import { connect } from 'react-redux'
+import { updateDisplay } from '../../game over/reducer'
 
 class EnemyProgressBar extends Component {
 
   render() { 
-    const { HP } = this.props
+    const { HP, gameOver } = this.props
 
+    if(!HP) {
+      gameOver('block')
+    }
     return (  
       <div className='status-box'>
         <HealthBar HP={HP}/>
@@ -20,4 +24,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(EnemyProgressBar)
+const mapDispatchToProps = dispatch => {
+  return { 
+    gameOver: display => {dispatch(updateDisplay(display))}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EnemyProgressBar)
