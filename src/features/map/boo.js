@@ -1,14 +1,15 @@
 import React from 'react'
-import BooSprite from './boo.png'
+import BooSprite from './boo2.png'
 
 const Boo = () => (
-    <div
+    <div 
+      className= 'boos'
       style={{
           position: 'absolute',
           backgroundImage: `url(${BooSprite})`,
           backgroundPosition: '0 0',
-          width: '25px',
-          height: '25px'
+          width: '220px',
+          height: '190px'
       }}
     />
 )
