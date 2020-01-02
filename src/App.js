@@ -3,6 +3,10 @@ import {BrowserRouter as Router, Route } from 'react-router-dom'
 import World from './features/world'
 import Home from './features/home/home'
 
+window.addEventListener('unload', function(event) {
+
+});
+
 function App() {
   return (
     <Router>
