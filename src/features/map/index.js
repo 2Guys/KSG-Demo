@@ -9,7 +9,7 @@ class Map extends React.Component {
   var camera, scene, renderer, geometry, material, mesh, texture, light, controls, booTexture, boos, counter;
 
 
-
+ 
   init();
   animate();
 
@@ -72,30 +72,32 @@ class Map extends React.Component {
       
       mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
+
+      // RENDERER ///
       renderer = new THREE.WebGLRenderer();
       renderer.setSize(window.innerWidth, window.innerHeight);
       // COMMENT OUT TO REMOVE CANVAS ELEMENT
       document.body.appendChild(renderer.domElement);
   }
 
-  function animate() {
+    function animate() {
 
-      for (let k = 0; k < boos.length; k++) {
-        let boo = boos[k];
-        boo.position.x += 5;
-        // boo.position.z -= 0.05
-        // boo.translateX(10)
-      }
+        for (let k = 0; k < boos.length; k++) {
+          let boo = boos[k];
+          boo.position.x += 5;
+          // boo.position.z -= 0.05
+          // boo.translateX(10)
+        }
 
-      requestAnimationFrame(animate);
-      render();
-  }
-
-  function render() {
-      texture.offset.y += .01;
-      renderer.render(scene, camera);
-  }
+        requestAnimationFrame(animate);
+        render();
     }
+
+    function render() {
+        texture.offset.y += .01;
+        renderer.render(scene, camera);
+    }
+  }
 
     render() {
       return ( 
